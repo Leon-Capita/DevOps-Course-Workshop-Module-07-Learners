@@ -8,7 +8,22 @@ jobs:
     steps:
     - uses: actions/checkout@v4 # Adds a step to checkout the repository code
 
-    - name: Hello world
-      uses: actions/hello-world-javascript-action@v1.1 # Name of the action. This uses https://github.com/actions/hello-world-javascript-action
-      with:                                            # This section is needed if you need to pass arguments to the action
-        who-to-greet: 'Mona the Octocat'
+    # - name: Hello world
+    #   uses: actions/hello-world-javascript-action@v1.1 # Name of the action. This uses https://github.com/actions/hello-world-javascript-action
+    #   with:                                            # This section is needed if you need to pass arguments to the action
+    #     who-to-greet: 'Mona the Octocat'
+
+    - name: Builds the C# code.
+      run: 'dotnet build'
+
+    - name: Runs the C# tests.
+      run: 'dotnet test'
+
+    - name: Builds the TypeScript code.
+      run: 'npm t'
+
+    - name: Runs the linter on the TypeScript code.
+      run: 'npm run lint'
+
+    - name: Runs the TypeScript tests.
+      run: 'dotnet run'
