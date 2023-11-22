@@ -22,7 +22,8 @@ jobs:
     - name: Builds the TypeScript code.
       working-directory: ./DotnetTemplate.Web
       # run: 'cd DotnetTemplate.Web && npm t' #github actions working directory working-directory
-      run: 'npm install && npm run build'
+      run: 'npm install'
+      run: 'npm run build'
       #run: 'npm t'
 
     - name: Runs the linter on the TypeScript code.
