@@ -20,10 +20,10 @@ jobs:
       run: 'dotnet test'
 
     - name: Builds the TypeScript code.
-      run: 'npm t'
+      run: 'cd DotnetTemplate.Web && npm t' #github actions working directory working-directory
 
     - name: Runs the linter on the TypeScript code.
-      run: 'npm run lint'
+      run: 'cd DotnetTemplate.Web && npm run lint'
 
     - name: Runs the TypeScript tests.
       run: 'dotnet run'
